@@ -1,0 +1,343 @@
+body { /*background of page */
+  margin: 0; /* Remove default margin */
+  background-color: #fff;
+}
+
+.mainHeader { /*main header for GFD order forms*/
+    position: relative;
+    color: #bdbec0;
+    text-align: center;
+    font-size: 3.5rem;
+    background-color: #9a173a;
+    padding-top: 5vh;
+    margin: 0;
+    z-index: 1;
+}
+
+
+.mainHeadersText { 
+  color: grey;
+  text-align: center;
+  border-bottom: black;
+  margin-top: 4vh;
+  padding-bottom: 2vh;
+  font-size: 3rem;
+  font-family: serif;
+}
+
+h3{ /*header for list of items SendOrderPage*/
+
+  position: relative;
+  text-align: left;
+  color: black;
+  margin-left: 3vw;
+}
+
+.tabs{ /*tab buttons */
+
+  position: absolute;
+  color: #9a173a;
+  top: 3.5vw;
+  right: 8vw;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+
+}
+.tabs button{ /*meant for the send/check order and order history */
+  color: #bdbec0;
+  background-color: #9a173a;
+  border-color: #555555;
+  border-style: outset;
+  margin-bottom: 1.5rem;
+  z-index: 1;
+  font-size: 1.1rem;
+  width: 9rem;
+}
+.tabs button:hover{
+
+  background-color:#510c1f;
+  border-width: 3px;
+  font-size: 1.1rem;
+  width: 9.5rem;
+}
+
+.containermainlogo { /* contains the logo*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+  
+.mainlogo { /*main logo in top left corner */
+    padding-top: 3vh;
+    padding-left: 3vw;
+    z-index: 2;
+    height: 20vh;
+}
+
+.custom-main-border { /* border around the main gfd header*/
+  position: relative;
+  border-style: outset;
+  border: .5vh solid maroon;
+  width: 100vw;
+  padding-bottom: 5vh;
+  background-color: #9a173a;
+  z-index: 0;
+}
+
+.custom-list-border{ /* for the list of items SendOrderPage*/
+  color: maroon;
+  border-style: groove;
+  border-width: .5rem;
+  border-color: #9a173a;
+  background-color: lightgrey;
+  width: 45%;
+  height: calc(100% - 10vh);
+  overflow-y: auto;
+  margin-top: 5vh;
+  margin-left: 3vh;
+  margin-right: 3vh;
+
+}
+* {
+  box-sizing: border-box;
+}
+
+.list-container {/*displays general and hygiene boxes correctly SendOrderPage*/
+  display: flex; /*displays the two boxes next to each other left and right */
+  justify-content: space-between; /*helps to make sure there is space between */
+  height: 100vh;
+}
+
+.items-container { /*container for all items in the list SendOrderPage*/
+  display: flex;
+  justify-content: space-between;
+  margin-left: 4vw;
+  margin-right: 4vw;
+  align-items: center;
+  border-bottom: 1px solid #555; /* Add a border line under each h3 element SendOrderPage*/
+  height: 3rem;
+}
+#day
+.addItemsContainer{ /*container for the add item, name, and quantity functionality SendOrderPage*/
+  display: flex;
+  justify-content: space-between;
+  margin-left: 4vw;
+  margin-right: 4vw;
+}
+.removeButton{ /*remove item button SendOrderPage */
+
+  color: #fff;
+  background-color:#555555;
+  cursor: pointer;
+  border-radius: .8rem;
+  height: 2rem;
+}
+.addItem{ /*input for the orderforms */
+  background-color: #eee;
+  border-color: black;
+  border-style: groove;
+  height: 1.5rem;
+  width: 8rem;
+
+}
+.addItemButton {  /* add item button color SendOrderPage*/
+
+  background-color: #525252;
+  border-color: solid rgb(68, 0, 0);
+  color: #fff;
+  text-align: center;
+  display: inline-block;
+  font-size: .8rem;
+  border-radius: 1rem; /* Optional: rounded corners */
+}
+.addItemButton:hover{ /*SendOrderPage */
+  background-color:#0c0c0c;
+}
+.submitOrderButton{ /*submit order button SendOrderPage */
+
+  background-color:#525252;
+  border-color: solid rgb(68, 0, 0);
+  color: #fff;
+  display: inline-block;
+  font-size: .8rem;
+  border-radius: 1rem;
+  margin-left: 2vw;
+  position: relative;
+  
+}
+.submitOrderButton:hover{ /*SendOrderPage */
+  background-color:#0c0c0c;
+}
+
+.successMessage { /*Success message below submit order button SendOrderPage */
+  color: rgb(42, 165, 42);
+  font-size: 1rem;
+  position: absolute;
+  left: 4vw;
+
+}
+
+.containerSubmitandSuccess{ /*Success message container SendOrderPage */
+  position: relative;
+  display: flex;
+  margin-bottom: 1vh;
+  right: 2vw;
+  display: flex;
+  flex-direction: column;
+}
+/*Check order page */
+
+.containerCheckHeader {
+  position: relative;
+  top: 2vh;
+  height: 4rem;
+  border-bottom: .3rem double black;
+/* 
+  margin-left: 16vw;
+  margin-right: 16vw; */
+}
+
+.checkOrderBorder{
+  height: 100vh;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  margin-top: 8vh;
+  border: .75rem;
+  border-style: groove;
+  border-color: #510c1f;
+  background-color: lightgrey;
+  border-radius: 1rem;
+  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.7);
+
+}
+
+/* @media (min-width: 0em) and (max-width: 49em){
+  h1 {
+    font-size: 2.5rem;
+
+  }
+  .mainlogo {
+    padding-left: 5%;
+  }
+
+  .tabs {
+
+    right: 5vw;
+    font-size: 1.5rem;
+
+  }
+  .tabs button {
+
+    font-size: .6rem;
+    width: 7rem;
+  
+  }
+  .addItem{
+
+    width: 4rem;
+
+  }
+  .addItemButton {
+
+    font-size: .6rem;
+    border-radius: .8rem;
+  }
+  .addItemsContainer {
+
+    margin-left: 2vw;
+    margin-right: 2vw;
+  }
+
+} */
+/* @media (min-height: 0em) and (max-height: 49em){
+  .mainlogo{
+    padding-top: 5vh;
+    max-height: 80%;
+  }
+  h1 {
+    font-size: 2.5rem;
+    padding-bottom: 5vh;
+
+  }
+  .custom-main-border {
+    padding-bottom: 5vh;
+  }
+
+  .tabs{
+    font-size: 1.5rem;
+    top: 6vh;
+
+  }
+  .tabs button {
+    margin-bottom: 1rem;
+    font-size: .8rem;
+  }
+  .addItem{
+
+    height: 1rem;
+
+  }
+  .addItemButton {
+
+    font-size: .6rem;
+    border-radius: .8rem;
+  }
+
+}
+@media (min-width: 50em) and (max-width: 80em){
+  h1 {
+    font-size: 2.5rem;
+
+  }
+  .mainlogo {
+    max-width: 70%;
+  }
+  .tabs{
+    font-size: 1rem;
+    right: 5vw;
+  }
+  .tabs button {
+    font-size: 1rem;
+    width: 7rem;
+  }
+  .addItem{
+    width: 6rem;
+  }
+  .addItemButton {
+    font-size: .6rem;
+    border-radius: .8rem;
+  }
+  .addItemsContainer {
+    margin-left: 2vw;
+    margin-right: 2vw;
+  }
+
+}
+@media (min-height: 50em) and (max-height: 80em) {
+  h1 {
+      font-size: 2.5rem;
+
+  }
+  .mainlogo {
+    padding-top: 3vh;
+    max-height: 14vh;
+  
+  }
+  .custom-main-border {
+    padding-bottom: 5vh;
+  }
+
+  .tabs{
+    font-size: 1.5rem;
+    top: 5vh;
+
+
+  }
+  .tabs button {
+    width: 7rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+} */
