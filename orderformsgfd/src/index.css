@@ -119,7 +119,7 @@ h3{ /*header for list of items SendOrderPage*/
   border-bottom: 1px solid #555; /* Add a border line under each h3 element SendOrderPage*/
   height: 3rem;
 }
-#day
+
 .addItemsContainer{ /*container for the add item, name, and quantity functionality SendOrderPage*/
   display: flex;
   justify-content: space-between;
@@ -170,20 +170,46 @@ h3{ /*header for list of items SendOrderPage*/
 .submitOrderButton:hover{ /*SendOrderPage */
   background-color:#0c0c0c;
 }
-
-.successMessage { /*Success message below submit order button SendOrderPage */
+/* Success message below submit order button SendOrderPage */
+.successMessage { 
   color: rgb(42, 165, 42);
   font-size: 1rem;
   position: absolute;
-  left: 4vw;
 
 }
+.animation .successMessage {
 
+  transform: translate(-50%, 50%);
+  margin-left: 4vw;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #4d4d4d 0, white 10%,#4d4d4d 20%);
+  background-position: 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: move 4s infinite linear;
+  animation-fill-mode: forwards;
+}
+@keyframes move {
+
+  0%{
+    background-position: 0;
+  }
+  50%{
+    background-position: 180px;
+  }
+  100%{
+    background-position: 400px;
+  }
+}
 .containerSubmitandSuccess{ /*Success message container SendOrderPage */
   position: relative;
   display: flex;
   margin-bottom: 1vh;
   right: 2vw;
+  margin-left: 6vw;
   display: flex;
   flex-direction: column;
 }
@@ -193,7 +219,8 @@ h3{ /*header for list of items SendOrderPage*/
   position: relative;
   top: 2vh;
   height: 4rem;
-  border-bottom: .3rem double black;
+  border-bottom: .35rem solid #9a173a;
+
 /* 
   margin-left: 16vw;
   margin-right: 16vw; */
@@ -211,6 +238,61 @@ h3{ /*header for list of items SendOrderPage*/
   border-radius: 1rem;
   box-shadow: 0 0 3rem rgba(0, 0, 0, 0.7);
 
+}
+
+.topnav {
+  position: absolute;
+  left: 60vw;
+  top: 0vh;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.navinput{
+  border: solid;
+  border-color: #866161;
+  background: #fff;
+  color: #000;
+  border-width: .15rem;
+  border-radius: .25rem;
+  width: 12vw;
+  height: 3vh;
+
+}
+
+.dropdown{
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid gray;
+}
+
+.dropdown:empty {
+  border: none;
+}
+
+.dropdown-row{
+  cursor: pointer;
+  text-align: start;
+  margin: 2px 0;
+}
+
+input {
+  width: 12vw;
+}
+.search-inner{
+  display: flex;
+}
+
+.checkOrderSearch{
+  margin-left: .5vw;
+  border: solid;
+  border-color: rgb(185, 185, 185);
+  background: #fff;
+  color: #000;
+  border-width: .15rem;
+  border-radius: .25rem;
 }
 
 /* @media (min-width: 0em) and (max-width: 49em){

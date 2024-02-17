@@ -1,6 +1,4 @@
 // SendOrderPage.js
-// Work on enter button --> needs to be implemented into handleAddGeneral and handleAddHygiene, and then a handlekeystroke function
-// Work on backend handling --> the send order page is sending an object with 4 attributes, the backend (JSON) tuples need to handle those features.
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 const serverUrl = 'http://localhost:3001';
@@ -36,7 +34,7 @@ const SendOrderPage = ({ setCurrentPage }) => {
     if (newHygieneItem.trim() !== '' && newHygieneItemQuantity > 0) {
 
       console.log(`Added hygiene item: ${newHygieneItem} (Quantity: ${newHygieneItemQuantity})`);
-      setHygieneItems((prevItems) => [...prevItems, {name: newHygieneItem, quantity: newHygieneItemQuantity, status: 'sent', type: 'hygiene'} ]); /*gives hygiene item object a .name and .quantity feature */
+      setHygieneItems((prevItems) => [...prevItems, {name: newHygieneItem, quantity: newHygieneItemQuantity, status: 'sent', type: 'hygiene'} ]); //gives hygiene item object a .name and .quantity feature
       setNewHygieneItem('');
       setNewHygieneItemQuantity('');
     }
@@ -47,7 +45,7 @@ const SendOrderPage = ({ setCurrentPage }) => {
     if (itemType === 'general') {
   
       const removedItem = generalItems[index];
-      console.log(`Removed general item: ${removedItem}`)
+      console.log(`Removed general item: ${removedItem.name}`)
       const updatedItems = generalItems.filter((item, i) => i !== index);
 
       setGeneralItems(updatedItems);
@@ -55,7 +53,7 @@ const SendOrderPage = ({ setCurrentPage }) => {
     } else if (itemType === 'hygiene') {
     
       const removedItem = hygieneItems[index];
-      console.log(`Removed hygiene item: ${removedItem}`)
+      console.log(`Removed hygiene item: ${removedItem.name}`)
       const updatedItems = hygieneItems.filter((item, i) => i !== index);
       setHygieneItems(updatedItems);
     } 
@@ -112,7 +110,7 @@ const SendOrderPage = ({ setCurrentPage }) => {
   } 
 /*add something to edit quantities */
   return (
-
+  
     <div className="list-container">
       <div className="custom-list-border">
         <div className = "mainHeadersText">General</div>
@@ -160,7 +158,7 @@ const SendOrderPage = ({ setCurrentPage }) => {
           </button>
           <div className="containerSubmitandSuccess">
           {showGeneralSuccessMessage && (
-          <div className="successMessageBorder"><p className="successMessage">General Order Successful!</p></div>
+          <div className="animation"><p className="successMessage">General Order Successful!</p></div>
         )}
         </div>
       </div>
@@ -191,8 +189,7 @@ const SendOrderPage = ({ setCurrentPage }) => {
               </li>
             </div>
           ))}
-        </ul>
-        
+        </ul>     
         <button className="submitOrderButton" onClick={() => {
           submitOrder(hygieneItems, 'hygiene');
           console.log(`Order Submitted: ${hygieneItems.name}`);
@@ -209,7 +206,7 @@ const SendOrderPage = ({ setCurrentPage }) => {
           Submit Hygiene Items
         </button>
         <div className="containerSubmitandSuccess">
-          {showHygieneSuccessMessage && (<div className= "successMessageBorder"><p className="successMessage">Hygiene Order Successful!</p></div>
+          {showHygieneSuccessMessage && (<div className="animation"><p className="successMessage">Hygiene Order Successful!</p></div>
         )}
         </div>
       </div>
