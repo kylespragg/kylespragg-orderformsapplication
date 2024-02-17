@@ -27,18 +27,43 @@ const CheckOrderPage = ({ setCurrentPage }) => {
   const onSearch = () => {
     console.log('search value', value);
     const results = mockData.filter((item) => {
+    
       try {
-        const inputFormats = [ //have to change the users input because it can be written multiple ways, so what we do is we convert the users input into our db format, then editing the db format to not include MM:ss to check if its the same and then we reformat it to be user readable
-          'YYYY-MM-DD',
+        const inputFormats = [ // all possible "common" combinations that a user might type
+          'MM/DD/YYYY',
           'MM-DD-YYYY',
           'MM DD YYYY',
-          'MMM DD YYYY',
-          'MMM Do YYYY',
-          'MMM Do YY',
-          'YYYY-MM-DD HH:mm:ss'
+          'MMM DD, YYYY',
+          'MMM D, YYYY',
+          'MMM YYYY',
+          'MM-YYYY',
+          'MM YYYY',
+          'YYYY',
+          'YY',
+          'YYYY-MM-DD',
+          'YYYY/MM/DD',
+          'DD/MM/YYYY',
+          'DD.MM.YYYY',
+          'DD MM YYYY',
+          'D MMM YYYY',
+          'D MMM, YYYY',
+          // 'DD MMM',
+          'D/MM/YYYY',
+          'D.MM.YYYY',
+          'D MM YYYY',
+          'YYYY-MM-DD HH:mm:ss', //special case for our database data only
         ]
-        const parsedInputDate = moment(value, inputFormats, true).format('YYYY-MM-DD');;
-        const parsedDbDate = moment(item.postDate, inputFormats, true).format('YYYY-MM-DD');;
+
+        /*
+        fix to consider all possible dates, account forthese combinations:
+          - all the dates with a specific month come up 'MM', 'MMM
+          - all the dates with a specific day come up 'DD', 'D', 
+          - all the dates with a specifc day and month come up 'DD/MM', 'D/MM', 'D.MM', etc.
+          - all the dates with a specific month and year come up 'MM/'YY', 'MM YY', 'MMM YY', 'MM/YYYY', etc.
+          - all the dates with a specifc day, month, and year ocme up 'DD-MM-YYYY', 'DD MM YY', 'D/MM/YYYY', 'DD-MMM-YYYY', etc.
+        */
+        const parsedInputDate = moment(value, inputFormats, true).format('YYYY-MM');
+        const parsedDbDate = moment(item.postDate, inputFormats, true).format('YYYY-MM');
 
         console.log('input', parsedInputDate);
         console.log('db', parsedDbDate);
