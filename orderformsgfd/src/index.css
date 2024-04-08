@@ -172,7 +172,6 @@ h3{ /*header for list of items SendOrderPage*/
 }
 /* Success message below submit order button SendOrderPage */
 .successMessage { 
-  color: rgb(42, 165, 42);
   font-size: 1rem;
   position: absolute;
 
@@ -220,16 +219,12 @@ h3{ /*header for list of items SendOrderPage*/
   top: 2vh;
   height: 4rem;
   border-bottom: .35rem solid #9a173a;
-
-/* 
-  margin-left: 16vw;
-  margin-right: 16vw; */
 }
 
 .checkOrderBorder{
   height: 100vh;
-  margin-left: 10vw;
-  margin-right: 10vw;
+  margin-left: 15vw;
+  margin-right: 15vw;
   margin-top: 8vh;
   border: .75rem;
   border-style: groove;
@@ -237,62 +232,345 @@ h3{ /*header for list of items SendOrderPage*/
   background-color: lightgrey;
   border-radius: 1rem;
   box-shadow: 0 0 3rem rgba(0, 0, 0, 0.7);
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-bottom: 5vh;
 
 }
-
-.topnav {
+.topnav { /*navigation for the checkorder page (search button)*/
   position: absolute;
-  left: 60vw;
+  left: 50vw;
   top: 0vh;
   display: flex;
   flex-direction: column;
-  
 }
 
-.navinput{
-  border: solid;
-  border-color: #866161;
-  background: #fff;
-  color: #000;
-  border-width: .15rem;
-  border-radius: .25rem;
-  width: 12vw;
-  height: 3vh;
-
-}
-
-.dropdown{
+.dropdown{ /*dropdown box */
   background-color: #fff;
   display: flex;
+  width: 9vw;
   flex-direction: column;
   border: 2px solid gray;
+  margin-left: 4.4vw;
+  margin-top: .5vh;
 }
 
-.dropdown:empty {
+.dropdown:empty { /*if dropdown rows are empty */
   border: none;
 }
 
-.dropdown-row{
+.dropdown-row{ /* text for each row */
   cursor: pointer;
-  text-align: start;
+  text-align: center;
   margin: 2px 0;
+  border-bottom: 2px black;
 }
 
-input {
-  width: 12vw;
-}
-.search-inner{
-  display: flex;
+.dropdown-row:hover{ /*changes color of row date when hovering */
+  color: #9a173a;
+  background-color: #ccc
 }
 
-.checkOrderSearch{
-  margin-left: .5vw;
+.checkOrderSearch{ /*dates in dropdown rows*/
   border: solid;
-  border-color: rgb(185, 185, 185);
-  background: #fff;
-  color: #000;
-  border-width: .15rem;
+  margin-left: 5vw;
+  margin-right: 15vw; 
+  background-color:#525252;
+  border-color: rgb(68, 0, 0);
+  color: #fff;
   border-radius: .25rem;
+  width: 7rem;
+  font-size: 1rem;
+  font-family: serif;
+}
+.checkOrderSearch:hover{ /*changes the search button when u hover over */
+  background-color:#0c0c0c;
+}
+.checkDateItems{
+  margin-top: 2vh;
+  margin-left: 8vw;
+  margin-right: 10vw;
+}
+
+.dateHeaderContainer {
+  margin-left: 5vw;
+  display: inline-block;
+  font-size: 3rem;
+  font-family: serif;
+  color: rgb(85, 85, 85);
+  border-bottom: none; /* Hide border initially */
+}
+
+.dateHeaderContainer:not(:empty) {
+  border-bottom: 1px solid grey; /* Display border when there is text inside */
+}
+.headItemText{ /* date for the items */
+  margin-left: 2vw;
+  text-align: center;
+  font-size: 2rem;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  width: 100%;
+}
+.headItemText:not(:empty){ /*hides date */
+  font-size: 1.5rem;
+  color: black;
+
+}
+.checkItemText { /*items text in table */
+  font-size: 1.5rem;
+  color: black;
+  margin-left: 2vw;
+  padding-bottom: 1vh;
+  margin-right: 2vw;
+  text-align: center;
+}
+.checkItemsContainer{ /*table container for items */
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 2vh;
+  padding-left: 2vh;
+  padding-right: 2vh;
+  width: 80%;
+  padding-bottom: 5vh;
+}
+.checkItemsContainer td, .checkItemsContainer th{ /*lines in rows and columns */
+  border: solid black .5px;
+  width: 15vw;
+  height: 15vh;
+  overflow: hidden;
+}
+#editQuantityText { /*text specific for quantity --> edit the location */
+    font-size: 1.5rem;
+    color: black;
+    margin-left: 1vw;
+    padding-bottom: 1vh;
+    margin-right: 3vw;
+    text-align: center;
+}
+#quantityButtonUnselected{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+}
+#quantityButtonOff{
+  width: 1rem;
+  height: 1rem;
+  border: solid #510c1f 2px;
+  position: relative;
+  top: 3.5vh;
+  border-radius: 1rem;
+}
+#quantityButtonOff:hover{
+  background-color: #4d4d4d;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+#quantityButtonSelected {
+  display: flex;
+  align-items: center;
+}
+#quantityButtonOn{
+  width: 1rem;
+  height: 1rem;
+  border: solid #510c1f 2px;
+  border-radius: 1rem;
+  position: relative;
+  left: 4.5vw;
+}
+.successQuantMessageShown #quantityButtonOn {
+  top: 2.25vh;
+}
+#quantityButtonOn:hover{
+  background-color: #4d4d4d;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+#quantityTextField {
+  width: 3rem;
+  left: 2vw;
+  position: relative;
+}
+.successQuantMessageShown #quantityTextField{
+  top: 2.25vh;
+}
+#saveEditQuantity{
+  position: relative;
+  top: 4vh;
+  left: 3vw;
+  height: 1rem;
+  width: 2.75rem;
+  font-size: .6rem;
+  border: solid #510c1f 1px;
+  border-radius: .25rem;
+  background-color: #eee;
+  color: black;
+}
+.successQuantMessageShown #saveEditQuantity{ 
+  top: 6.25vh;
+}
+#saveEditQuantity:hover{
+  background-color: #bbb ;
+}
+
+#quantitySuccessMessage {
+  font-size: .75rem;
+  position: relative;
+  left: 7.5vw;
+  top: 1.5vh;
+}
+
+#animationQuantity #quantitySuccessMessage {
+  transform: translate(-50%, 50%);
+  color: #fff;
+  font-weight: bold;
+  background: linear-gradient(to right, #4d4d4d 0, white 10%,#4d4d4d 20%);
+  background-position: 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: move 4s infinite linear;
+  animation-fill-mode: forwards;
+}
+@keyframes move {
+
+  0%{
+    background-position: 0;
+  }
+  50%{
+    background-position: 180px;
+  }
+  100%{
+    background-position: 400px;
+  }
+}
+
+#editStatusText { /*text specific for status --> edit the location */
+  font-size: 1.5rem;
+  color: black;
+  margin-left: 1vw;
+  padding-bottom: 1vh;
+  margin-right: 3vw;
+  text-align: center;
+}
+#statusButtonUnselected{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+}
+
+#statusButtonOff{
+  width: 1rem;
+  height: 1rem;
+  border: solid #510c1f 2px;
+  position: relative;
+  border-radius: 1rem;
+  top: 3.85vh;
+  right: 1vw;
+}
+
+#statusButtonOff:hover{
+    background-color: #4d4d4d;
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+#statusButtonSelected {
+  display: flex;
+  align-items: center;
+}
+
+#statusButtonOn{
+    width: 1rem;
+    height: 1rem;
+    border: solid #510c1f 2px;
+    border-radius: 1rem;
+    position: relative;
+    left: 2vw;
+  }
+.successMessageShown #statusButtonOn {
+    top: 2.25vh;
+
+}
+#statusButtonOn:hover{
+    background-color: #4d4d4d;
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+#statusSelect{
+  width: 5rem;
+  height: 1.5rem;
+  font-size: .75rem;
+  margin-left: 2vw;
+  background-color: #fff;
+  color: black;
+  border: #71102c solid 1.5px;
+  border-radius: .25rem;
+  text-align: center;
+  position: relative;
+}
+
+.successMessageShown #statusSelect {
+  top: 2.25vh;
+
+}
+
+#saveEditStatus{
+  position: relative;
+  top: 3.5vh;
+  right: 1vw;
+  height: 1rem;
+  width: 2.75rem;
+  font-size: .6rem;
+  border: solid #510c1f 1px;
+  border-radius: .25rem;
+  background-color: #eee;
+  color: black;
+}
+
+.successMessageShown #saveEditStatus {
+  top: 5.75vh;
+ 
+}
+
+#saveEditStatus:hover{
+  background-color: #bbb;
+}
+#statusSuccessMessage {
+  font-size: .75rem;
+  position: relative;
+  left: 7.5vw;
+  top: 1.5vh;
+}
+
+#animationStatus #statusSuccessMessage {
+  color: #fff;
+  font-weight: bold;
+  transform: translate(-50%, 50%);
+  background: linear-gradient(to right, #4d4d4d 0, white 10%,#4d4d4d 20%);
+  background-position: 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: move 4s infinite linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes move {
+
+  0%{
+    background-position: 0;
+  }
+  50%{
+    background-position: 180px;
+  }
+  100%{
+    background-position: 400px;
+  }
 }
 
 /* @media (min-width: 0em) and (max-width: 49em){

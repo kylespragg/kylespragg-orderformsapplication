@@ -95,15 +95,25 @@ const SendOrderPage = ({ setCurrentPage }) => {
           })),
       });
       console.log(response)
-      if (items.item.type === 'general'){
+      let generalSuccess = false;
+      let hygieneSuccess = false;
+
+      items.forEach(item => {
+        if (item.type === 'general') {
+          generalSuccess = true;
+        }
+        if (item.type ==='hygiene') {
+          hygieneSuccess = true;
+        }
+      });
+
+      if (generalSuccess){
         setGeneralSuccessMessage(true);
       }
-      else{
+      else {
         setHygieneSuccessMessage(true);
       }
-
-  
-    } catch (error) {
+      } catch (error) {
       // Handle error...
       console.error('Error submitting order:', error); // Handle unexpected errors if needed
     }

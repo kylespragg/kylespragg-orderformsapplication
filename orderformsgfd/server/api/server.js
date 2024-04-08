@@ -87,33 +87,30 @@ server.post('/orderforms', async (req,res) => {
     }
 
 */
-// server.put('/orderforms/:items/:postDate', async (req, res) => { //might need to fix if use --> will update all the orders with the same post dates
-//     const { items } = req.body;
+server.put('/orderforms/:id', async (req, res) => { //might need to fix if use --> will update orders with id
+    const { items } = req.body;
 
-//     if (!items || items.length === 0) {
-//         return res.status(400).json({ message: 'Invalid request. Missing postDate or items.' });
-//     }
+    if (!items || items.length === 0) {
+        return res.status(400).json({ message: 'Invalid request. Missing quantity or items.' });
+    }
 
-//     try {
-//         // Assuming you want to update the orderforms with the specified postDate
-//         await Promise.all(items.map(async (item) => {
-//             const { postDate, ...rest } = item
-//             if (postDate) {
-                
-//                 console.log('postdate:', postDate);
-//                 console.log('other properties:', rest);
-                
-//                 await db('orderforms').where({ postDate }).update({ rest });
-                
-//             }
-//         }))
+    try {
+        // Assuming you want to update the orderforms with the specified postDate
+        await Promise.all(items.map(async (item) => {
+            const { id, quantity, status,...rest } = item
+            const updateData = {};
+            if (quantity !== undefined) updateData.quantity = quantity;
+            if (status !== undefined) updateData.status = status;
+
+            await db('orderforms').where({ id }).update(updateData);
+        }))
     
-//         res.status(200).json({ message: 'Order successfully updated!' });
-//     } catch (err) {
-//         console.log(err);
-//         res.status(500).json({ message: 'Internal Server Error.' });
-//     }
-// });
+        res.status(200).json({ message: 'Order quantities successfully updated!' });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ message: 'Internal Server Error.' });
+    }
+});
 
 server.delete('/orderforms/:postDate', async (req, res) => { // in actual url do not put the colon
     const { postDate } = req.params;
@@ -125,9 +122,8 @@ server.delete('/orderforms/:postDate', async (req, res) => { // in actual url do
     try {
         console.log('postDate before deletion:', postDate);
         await db('orderforms').where({ postDate }).del();
-
-        
         res.status(200).json({ message: 'Order successfully deleted!' });
+
     } catch (err) {
         console.log(err);
         res.status(500).json({ message: 'Internal Server Error.' });
