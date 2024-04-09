@@ -24,7 +24,7 @@ const CheckOrderPage = ({ setCurrentPage }) => {
   const[selectedStatus, setSelectedStatus] = useState('sent');//initialize the first state as sent so that user does not cause null issue when updating
   const[showStatusMessage, setStatusMessage] = useState(false);
 
-  const setData = async () => {
+  const setData = async () => { //retrieves data
     try {
       const response = await axios.get(`${serverUrl}/orderforms/`);
       setItemData(response.data); // Update the state with the response data
@@ -32,11 +32,11 @@ const CheckOrderPage = ({ setCurrentPage }) => {
       console.log(err);
     }
   };
-  useEffect(() => {
-    setData();
+  useEffect(() => { //calls set data when page is rendered
+    setData(); // 
   }, []);
 
-  const onSearch = () => {
+  const onSearch = () => { // function for when search button is clicked
 
     setSearchResults(searchButtonClick ? [] : itemData); //sets the search results bar with dates
     setSearchButtonClick(!searchButtonClick); //resets the search button click
@@ -133,10 +133,10 @@ const CheckOrderPage = ({ setCurrentPage }) => {
 }
 
   return (
-      <div className="checkOrderBorder">
-        <div className="containerCheckHeader">
-          <p className = "mainHeadersText">Check Order</p>  
-          <div className ="topnav">
+      <div id="checkOrderBorder">
+        <div id="containerCheckHeader">
+          <p className= "mainHeadersText">Check Order</p>  
+          <div id ="topnav">
               <button className={`checkOrderSearch ${searchButtonClick ? 'selected' : ''}`} onClick={onSearch}>Search</button>
               <div className="dropdown">
                 {Object.entries(groupedData).map(([date, items]) => (
@@ -150,8 +150,8 @@ const CheckOrderPage = ({ setCurrentPage }) => {
                 ))}
               </div>
           </div>
-            <p className="dateHeaderContainer">{headDate}</p>
-          <table className="checkItemsContainer">
+            <p id="dateHeaderContainer">{headDate}</p>
+          <table id="checkItemsContainer">
             <thead>
               <tr>
                 {headText.map((label, index) => (
@@ -165,7 +165,7 @@ const CheckOrderPage = ({ setCurrentPage }) => {
 
                 <td key = {`${item.id}_quantity`}>
                   {/*thought process is give the button a value tag with the id of the item so that when it is selected we can try to match the value of that button to where it is located in the table to edit only that text field*/}
-                    {editingQuantityItem !== item.id ? ( /* created a use state that when a button is clicked it takes the item.id and sets it to the editingQuantityItem then it switches the inptu field because editingQuantityItem is now equal to item.id (false) so we can swtich.*/
+                    {editingQuantityItem !== item.id ? ( /* created a use state that when a button is clicked it takes the item.id and sets it to the editingQuantityItem then it switches the input field because editingQuantityItem is now equal to item.id (false) so we can swtich.*/
                     <div id="quantityButtonUnselected">
                       <>
                       <p id="editQuantityText">{item.quantity}</p> {/*ternary operator to update the item quantity if necessary */}
@@ -207,7 +207,7 @@ const CheckOrderPage = ({ setCurrentPage }) => {
 
                 <td key = {`${item.id}_type`}><p className="checkItemText">{item.type}</p></td>  
                 <td key = {`${item.id}_status`}> {/* similar to the functionality of editing the quantity above */}
-                  {editingStatusItem !== item.id ? (
+                  {editingStatusItem !== item.id ? ( /* ternary operator  to switch between input field and displaying the value*/
                     <div id="statusButtonUnselected">
                     <>
                       <p id="editStatusText">{item.status}</p>

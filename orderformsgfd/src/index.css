@@ -176,7 +176,7 @@ h3{ /*header for list of items SendOrderPage*/
   position: absolute;
 
 }
-.animation .successMessage {
+.animation .successMessage { /*animation of success message */
 
   transform: translate(-50%, 50%);
   margin-left: 4vw;
@@ -214,14 +214,14 @@ h3{ /*header for list of items SendOrderPage*/
 }
 /*Check order page */
 
-.containerCheckHeader {
+#containerCheckHeader { /* main container */
   position: relative;
   top: 2vh;
   height: 4rem;
   border-bottom: .35rem solid #9a173a;
 }
 
-.checkOrderBorder{
+#checkOrderBorder{ /*border for where order will be displayed */
   height: 100vh;
   margin-left: 15vw;
   margin-right: 15vw;
@@ -237,7 +237,7 @@ h3{ /*header for list of items SendOrderPage*/
   margin-bottom: 5vh;
 
 }
-.topnav { /*navigation for the checkorder page (search button)*/
+#topnav { /*navigation for the checkorder page (search button)*/
   position: absolute;
   left: 50vw;
   top: 0vh;
@@ -286,13 +286,9 @@ h3{ /*header for list of items SendOrderPage*/
 .checkOrderSearch:hover{ /*changes the search button when u hover over */
   background-color:#0c0c0c;
 }
-.checkDateItems{
-  margin-top: 2vh;
-  margin-left: 8vw;
-  margin-right: 10vw;
-}
 
-.dateHeaderContainer {
+
+#dateHeaderContainer {
   margin-left: 5vw;
   display: inline-block;
   font-size: 3rem;
@@ -301,22 +297,10 @@ h3{ /*header for list of items SendOrderPage*/
   border-bottom: none; /* Hide border initially */
 }
 
-.dateHeaderContainer:not(:empty) {
+#dateHeaderContainer:not(:empty) {
   border-bottom: 1px solid grey; /* Display border when there is text inside */
 }
-.headItemText{ /* date for the items */
-  margin-left: 2vw;
-  text-align: center;
-  font-size: 2rem;
-  padding-left: 2vw;
-  padding-right: 2vw;
-  width: 100%;
-}
-.headItemText:not(:empty){ /*hides date */
-  font-size: 1.5rem;
-  color: black;
 
-}
 .checkItemText { /*items text in table */
   font-size: 1.5rem;
   color: black;
@@ -325,7 +309,7 @@ h3{ /*header for list of items SendOrderPage*/
   margin-right: 2vw;
   text-align: center;
 }
-.checkItemsContainer{ /*table container for items */
+#checkItemsContainer{ /*table container for items */
   margin-left: auto;
   margin-right: auto;
   padding-top: 2vh;
@@ -334,7 +318,7 @@ h3{ /*header for list of items SendOrderPage*/
   width: 80%;
   padding-bottom: 5vh;
 }
-.checkItemsContainer td, .checkItemsContainer th{ /*lines in rows and columns */
+#checkItemsContainer td, #checkItemsContainer th{ /*lines in rows and columns */
   border: solid black .5px;
   width: 15vw;
   height: 15vh;
@@ -348,13 +332,13 @@ h3{ /*header for list of items SendOrderPage*/
     margin-right: 3vw;
     text-align: center;
 }
-#quantityButtonUnselected{
+#quantityButtonUnselected{ /* container for quantity button elements when not being edited */
   display: flex;
   flex-direction: row;
   text-align: center;
   justify-content: center;
 }
-#quantityButtonOff{
+#quantityButtonOff{ /* button to switch between edit field */
   width: 1rem;
   height: 1rem;
   border: solid #510c1f 2px;
@@ -362,17 +346,17 @@ h3{ /*header for list of items SendOrderPage*/
   top: 3.5vh;
   border-radius: 1rem;
 }
-#quantityButtonOff:hover{
+#quantityButtonOff:hover{  /*changes background/size of quantity button */
   background-color: #4d4d4d;
   width: 1.2rem;
   height: 1.2rem;
 }
 
-#quantityButtonSelected {
+#quantityButtonSelected { /*container when input field is visible */
   display: flex;
   align-items: center;
 }
-#quantityButtonOn{
+#quantityButtonOn{ /* button to switch between edit field */
   width: 1rem;
   height: 1rem;
   border: solid #510c1f 2px;
@@ -380,23 +364,23 @@ h3{ /*header for list of items SendOrderPage*/
   position: relative;
   left: 4.5vw;
 }
-.successQuantMessageShown #quantityButtonOn {
+.successQuantMessageShown #quantityButtonOn { /*adjusts location of element when success message is shown */
   top: 2.25vh;
 }
-#quantityButtonOn:hover{
+#quantityButtonOn:hover{ /*changes size and background of quantity button */
   background-color: #4d4d4d;
   width: 1.2rem;
   height: 1.2rem;
 }
-#quantityTextField {
+#quantityTextField { /*styling of input field for quantity */
   width: 3rem;
   left: 2vw;
   position: relative;
 }
-.successQuantMessageShown #quantityTextField{
+.successQuantMessageShown #quantityTextField{ /*adjusts location of element when success message is shown */
   top: 2.25vh;
 }
-#saveEditQuantity{
+#saveEditQuantity{ /*save button when editing quantity */
   position: relative;
   top: 4vh;
   left: 3vw;
@@ -408,21 +392,21 @@ h3{ /*header for list of items SendOrderPage*/
   background-color: #eee;
   color: black;
 }
-.successQuantMessageShown #saveEditQuantity{ 
+.successQuantMessageShown #saveEditQuantity{ /*adjusts location of element when success message is shown */
   top: 6.25vh;
 }
-#saveEditQuantity:hover{
+#saveEditQuantity:hover{ /*changes color of save button when hovering over */
   background-color: #bbb ;
 }
 
-#quantitySuccessMessage {
+#quantitySuccessMessage { /*sucess message when edit is sucessful */
   font-size: .75rem;
   position: relative;
   left: 7.5vw;
   top: 1.5vh;
 }
 
-#animationQuantity #quantitySuccessMessage {
+#animationQuantity #quantitySuccessMessage { /*animation of success message */
   transform: translate(-50%, 50%);
   color: #fff;
   font-weight: bold;
@@ -434,18 +418,6 @@ h3{ /*header for list of items SendOrderPage*/
   animation: move 4s infinite linear;
   animation-fill-mode: forwards;
 }
-@keyframes move {
-
-  0%{
-    background-position: 0;
-  }
-  50%{
-    background-position: 180px;
-  }
-  100%{
-    background-position: 400px;
-  }
-}
 
 #editStatusText { /*text specific for status --> edit the location */
   font-size: 1.5rem;
@@ -455,14 +427,14 @@ h3{ /*header for list of items SendOrderPage*/
   margin-right: 3vw;
   text-align: center;
 }
-#statusButtonUnselected{
+#statusButtonUnselected{ /*container for elements when status button is unselected */
   display: flex;
   flex-direction: row;
   text-align: center;
   justify-content: center;
 }
 
-#statusButtonOff{
+#statusButtonOff{ /* button to switch between edit field */
   width: 1rem;
   height: 1rem;
   border: solid #510c1f 2px;
@@ -472,18 +444,18 @@ h3{ /*header for list of items SendOrderPage*/
   right: 1vw;
 }
 
-#statusButtonOff:hover{
+#statusButtonOff:hover{ /* hover feature for button to switch between edit field  */
     background-color: #4d4d4d;
     width: 1.2rem;
     height: 1.2rem;
 }
 
-#statusButtonSelected {
+#statusButtonSelected { /*container for when status button is selected */
   display: flex;
   align-items: center;
 }
 
-#statusButtonOn{
+#statusButtonOn{ /*button to switch between edit field  */
     width: 1rem;
     height: 1rem;
     border: solid #510c1f 2px;
@@ -491,17 +463,17 @@ h3{ /*header for list of items SendOrderPage*/
     position: relative;
     left: 2vw;
   }
-.successMessageShown #statusButtonOn {
+.successMessageShown #statusButtonOn { /*edits the status button location when success message is showing */
     top: 2.25vh;
 
 }
-#statusButtonOn:hover{
+#statusButtonOn:hover{ /*adjusts background color and size of button to switch between edit field */
     background-color: #4d4d4d;
     width: 1.2rem;
     height: 1.2rem;
 }
 
-#statusSelect{
+#statusSelect{ /*styling for drop down selection */
   width: 5rem;
   height: 1.5rem;
   font-size: .75rem;
@@ -514,12 +486,12 @@ h3{ /*header for list of items SendOrderPage*/
   position: relative;
 }
 
-.successMessageShown #statusSelect {
+.successMessageShown #statusSelect {  /*adjusts location of select field when sucess message shows*/
   top: 2.25vh;
 
 }
 
-#saveEditStatus{
+#saveEditStatus{ /* save button when editing status */
   position: relative;
   top: 3.5vh;
   right: 1vw;
@@ -532,22 +504,22 @@ h3{ /*header for list of items SendOrderPage*/
   color: black;
 }
 
-.successMessageShown #saveEditStatus {
+.successMessageShown #saveEditStatus { /*adjusts location of save button when sucess message shows*/
   top: 5.75vh;
  
 }
 
-#saveEditStatus:hover{
+#saveEditStatus:hover{ /*edits background of save button on status */
   background-color: #bbb;
 }
-#statusSuccessMessage {
+#statusSuccessMessage { /* status success message styling*/
   font-size: .75rem;
   position: relative;
   left: 7.5vw;
   top: 1.5vh;
 }
 
-#animationStatus #statusSuccessMessage {
+#animationStatus #statusSuccessMessage { /*animation of status message */
   color: #fff;
   font-weight: bold;
   transform: translate(-50%, 50%);
@@ -560,7 +532,7 @@ h3{ /*header for list of items SendOrderPage*/
   animation-fill-mode: forwards;
 }
 
-@keyframes move {
+@keyframes move { /*all success messages animation*/
 
   0%{
     background-position: 0;
@@ -573,6 +545,8 @@ h3{ /*header for list of items SendOrderPage*/
   }
 }
 
+
+/* Order History Page */
 /* @media (min-width: 0em) and (max-width: 49em){
   h1 {
     font-size: 2.5rem;
