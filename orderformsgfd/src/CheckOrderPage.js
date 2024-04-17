@@ -135,7 +135,7 @@ const CheckOrderPage = ({ setCurrentPage }) => {
   return (
       <div id="checkOrderBorder">
         <div id="containerCheckHeader">
-          <p className= "mainHeadersText">Check Order</p>  
+          <p id= "checkHeaderTitle">Check Order</p>  
           <div id ="topnav">
               <button className={`checkOrderSearch ${searchButtonClick ? 'selected' : ''}`} onClick={onSearch}>Search</button>
               <div className="dropdown">
@@ -191,16 +191,16 @@ const CheckOrderPage = ({ setCurrentPage }) => {
                           }, 300);
                           setTimeout(() => {
                             setQuantityMessage(false);
-                            setEditingQuantityItem('')
+                            setEditingQuantityItem('');
                           }, 2000)
                         }} 
                         disabled={!(newItemQuantity.trim !== '' && newItemQuantity > 0)}
                         >
                         Submit
                       </button>
-                      </div>
                       {showQuantityMessage && 
                       <div id="animationQuantity"><p id="quantitySuccessMessage">Edit Successful!</p></div>}
+                      </div>
                       </>             
                     )}          
                 </td>
@@ -233,9 +233,9 @@ const CheckOrderPage = ({ setCurrentPage }) => {
                         }, 2000)
                         }} 
                        >Save</button>
-                       </div>
                        {showStatusMessage && 
-                        <div id="animationStatus"><p id="statusSuccessMessage">Edit Successful!</p></div>}       
+                        <div id="animationStatus"><p id="statusSuccessMessage">Edit Successful!</p></div>}    
+                       </div>   
                     </>           
                   )} 
                 </td>

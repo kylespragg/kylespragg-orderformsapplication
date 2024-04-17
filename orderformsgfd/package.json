@@ -17,7 +17,8 @@
     "react-scripts": "^3.0.1",
     "sqlite3": "^5.1.7",
     "styled-components": "^6.1.2",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "xrpl": "^3.0.0"
   },
   "scripts": {
     "start": "react-scripts --openssl-legacy-provider start",

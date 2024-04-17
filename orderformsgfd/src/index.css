@@ -220,7 +220,14 @@ h3{ /*header for list of items SendOrderPage*/
   height: 4rem;
   border-bottom: .35rem solid #9a173a;
 }
-
+#checkHeaderTitle{/* check order main text */
+  color: #4d4b4b;
+  text-align: center;
+  margin-top: 4vh;
+  margin-bottom: 1vh;
+  font-size: 3.5rem;
+  font-family: serif;
+}
 #checkOrderBorder{ /*border for where order will be displayed */
   height: 100vh;
   margin-left: 15vw;
@@ -253,6 +260,7 @@ h3{ /*header for list of items SendOrderPage*/
   border: 2px solid gray;
   margin-left: 4.4vw;
   margin-top: .5vh;
+  z-index: 5;
 }
 
 .dropdown:empty { /*if dropdown rows are empty */
@@ -264,6 +272,7 @@ h3{ /*header for list of items SendOrderPage*/
   text-align: center;
   margin: 2px 0;
   border-bottom: 2px black;
+  z-index: 5;
 }
 
 .dropdown-row:hover{ /*changes color of row date when hovering */
@@ -289,7 +298,8 @@ h3{ /*header for list of items SendOrderPage*/
 
 
 #dateHeaderContainer {
-  margin-left: 5vw;
+  margin-top: 0vh;
+  margin-left: 8vw;
   display: inline-block;
   font-size: 3rem;
   font-family: serif;
@@ -302,17 +312,16 @@ h3{ /*header for list of items SendOrderPage*/
 }
 
 .checkItemText { /*items text in table */
-  font-size: 1.5rem;
+  font-size: .8rem;
   color: black;
   margin-left: 2vw;
-  padding-bottom: 1vh;
   margin-right: 2vw;
   text-align: center;
 }
 #checkItemsContainer{ /*table container for items */
   margin-left: auto;
   margin-right: auto;
-  padding-top: 2vh;
+  margin-top: -2.5vh;
   padding-left: 2vh;
   padding-right: 2vh;
   width: 80%;
@@ -320,16 +329,13 @@ h3{ /*header for list of items SendOrderPage*/
 }
 #checkItemsContainer td, #checkItemsContainer th{ /*lines in rows and columns */
   border: solid black .5px;
-  width: 15vw;
-  height: 15vh;
   overflow: hidden;
 }
 #editQuantityText { /*text specific for quantity --> edit the location */
-    font-size: 1.5rem;
+    font-size: .8rem;
     color: black;
     margin-left: 1vw;
-    padding-bottom: 1vh;
-    margin-right: 3vw;
+    margin-right: 2vw;
     text-align: center;
 }
 #quantityButtonUnselected{ /* container for quantity button elements when not being edited */
@@ -339,71 +345,75 @@ h3{ /*header for list of items SendOrderPage*/
   justify-content: center;
 }
 #quantityButtonOff{ /* button to switch between edit field */
-  width: 1rem;
-  height: 1rem;
+  width: .5rem;
+  height: .75rem;
   border: solid #510c1f 2px;
   position: relative;
-  top: 3.5vh;
-  border-radius: 1rem;
+  top: 1.75vh;
+  border-radius: .5rem;
+  z-index: 0;
 }
 #quantityButtonOff:hover{  /*changes background/size of quantity button */
   background-color: #4d4d4d;
-  width: 1.2rem;
-  height: 1.2rem;
+  width: .5rem;
+  height: .85rem;
 }
 
 #quantityButtonSelected { /*container when input field is visible */
   display: flex;
   align-items: center;
+  width: 6.5vw;
 }
 #quantityButtonOn{ /* button to switch between edit field */
-  width: 1rem;
-  height: 1rem;
+  width: .5rem;
+  height: .75rem;
   border: solid #510c1f 2px;
-  border-radius: 1rem;
+  border-radius: .5rem;
   position: relative;
-  left: 4.5vw;
+  left: 6vw;
 }
-.successQuantMessageShown #quantityButtonOn { /*adjusts location of element when success message is shown */
-  top: 2.25vh;
-}
+
 #quantityButtonOn:hover{ /*changes size and background of quantity button */
   background-color: #4d4d4d;
-  width: 1.2rem;
-  height: 1.2rem;
+  width: .5rem;
+  height: .85rem;
 }
 #quantityTextField { /*styling of input field for quantity */
-  width: 3rem;
-  left: 2vw;
+  width: 2rem;
+  height: 1rem;
+  left: 3vw;
+  font-size: .8rem;
   position: relative;
 }
-.successQuantMessageShown #quantityTextField{ /*adjusts location of element when success message is shown */
-  top: 2.25vh;
+#quantityTextField::-webkit-inner-spin-button,
+#quantityTextField::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
+
 #saveEditQuantity{ /*save button when editing quantity */
   position: relative;
-  top: 4vh;
-  left: 3vw;
-  height: 1rem;
-  width: 2.75rem;
-  font-size: .6rem;
+  top: 2.25vh;
+  left: .5vw;
+  height: .75rem;
+  width: 2.5rem;
+  font-size: .5rem;
   border: solid #510c1f 1px;
   border-radius: .25rem;
   background-color: #eee;
   color: black;
 }
-.successQuantMessageShown #saveEditQuantity{ /*adjusts location of element when success message is shown */
-  top: 6.25vh;
-}
+
 #saveEditQuantity:hover{ /*changes color of save button when hovering over */
   background-color: #bbb ;
 }
 
 #quantitySuccessMessage { /*sucess message when edit is sucessful */
-  font-size: .75rem;
+  font-size: .65rem;
   position: relative;
-  left: 7.5vw;
-  top: 1.5vh;
+  left: 3.25vw;
+  top: 2vh;
+  width: 5vw;
 }
 
 #animationQuantity #quantitySuccessMessage { /*animation of success message */
@@ -420,11 +430,11 @@ h3{ /*header for list of items SendOrderPage*/
 }
 
 #editStatusText { /*text specific for status --> edit the location */
-  font-size: 1.5rem;
+  font-size: .8rem;
   color: black;
-  margin-left: 1vw;
-  padding-bottom: 1vh;
+  margin-left: 3.5vw;
   margin-right: 3vw;
+  margin-top: 3vh;
   text-align: center;
 }
 #statusButtonUnselected{ /*container for elements when status button is unselected */
@@ -432,52 +442,52 @@ h3{ /*header for list of items SendOrderPage*/
   flex-direction: row;
   text-align: center;
   justify-content: center;
+  height: 4rem;
+  width: 5.5rem;
 }
 
 #statusButtonOff{ /* button to switch between edit field */
-  width: 1rem;
-  height: 1rem;
+  width: .5rem;
+  height: .75rem;
   border: solid #510c1f 2px;
   position: relative;
   border-radius: 1rem;
-  top: 3.85vh;
-  right: 1vw;
+  top: 3.25vh;
 }
 
 #statusButtonOff:hover{ /* hover feature for button to switch between edit field  */
     background-color: #4d4d4d;
-    width: 1.2rem;
-    height: 1.2rem;
+    width: .5rem;
+    height: .85rem;
 }
 
 #statusButtonSelected { /*container for when status button is selected */
   display: flex;
   align-items: center;
+  width: 5.5rem;
+  height: 4rem;
 }
 
 #statusButtonOn{ /*button to switch between edit field  */
-    width: 1rem;
-    height: 1rem;
+    width: .5rem;
+    height: .75rem;
     border: solid #510c1f 2px;
     border-radius: 1rem;
     position: relative;
-    left: 2vw;
-  }
-.successMessageShown #statusButtonOn { /*edits the status button location when success message is showing */
-    top: 2.25vh;
-
+    left: 1.5vw;
 }
+
 #statusButtonOn:hover{ /*adjusts background color and size of button to switch between edit field */
     background-color: #4d4d4d;
-    width: 1.2rem;
-    height: 1.2rem;
+    width: .5rem;
+    height: .85rem;
 }
 
 #statusSelect{ /*styling for drop down selection */
-  width: 5rem;
-  height: 1.5rem;
+  width: 4rem;
+  height: 1rem;
   font-size: .75rem;
-  margin-left: 2vw;
+  margin-left: 1.5vw;
   background-color: #fff;
   color: black;
   border: #71102c solid 1.5px;
@@ -486,17 +496,12 @@ h3{ /*header for list of items SendOrderPage*/
   position: relative;
 }
 
-.successMessageShown #statusSelect {  /*adjusts location of select field when sucess message shows*/
-  top: 2.25vh;
-
-}
 
 #saveEditStatus{ /* save button when editing status */
   position: relative;
-  top: 3.5vh;
-  right: 1vw;
-  height: 1rem;
-  width: 2.75rem;
+  top: 2.5vh;
+  height: .8rem;
+  width: 2.5rem;
   font-size: .6rem;
   border: solid #510c1f 1px;
   border-radius: .25rem;
@@ -504,19 +509,16 @@ h3{ /*header for list of items SendOrderPage*/
   color: black;
 }
 
-.successMessageShown #saveEditStatus { /*adjusts location of save button when sucess message shows*/
-  top: 5.75vh;
- 
-}
 
 #saveEditStatus:hover{ /*edits background of save button on status */
   background-color: #bbb;
 }
 #statusSuccessMessage { /* status success message styling*/
-  font-size: .75rem;
+  font-size: .65rem;
   position: relative;
-  left: 7.5vw;
-  top: 1.5vh;
+  right: 4vw;
+  top: 2vh;
+  width: 7rem;
 }
 
 #animationStatus #statusSuccessMessage { /*animation of status message */
@@ -546,7 +548,57 @@ h3{ /*header for list of items SendOrderPage*/
 }
 
 
+
 /* Order History Page */
+#orderHistoryContainer{
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+#orderHistoryText {
+  color: #4d4b4b;
+  text-align: center;
+  margin-top: 4vh;
+  font-size: 4rem;
+  font-family: serif;
+  margin-bottom: -4vh;
+}
+#pendingOrdersText {
+  font-size: 3rem;
+  margin-left: 8vw;
+  color: #000;
+  font-family: serif;
+}
+
+#orderHistoryTable{
+  margin-left: 4vw;
+  margin-right: 4vw;
+}
+
+.headHistoryText{
+  font-size: 2rem;
+  padding-left: 5vw;
+}
+.deleteHeadText{
+  padding-left: 40vw;
+  font-size: 2rem;
+}
+.divider-shadow {
+  position: relative;
+  border-radius: 20px; /* Adjust border radius as needed */
+}
+
+.divider-shadow::after {
+  margin-top: -3vh;
+  content: "";
+  position: absolute;
+  top: 100%; /* Push the shadow below the element */
+  left: -4vw;
+  width: 100vw;
+  height: 3vh; /* Adjust the height of the shadow as needed */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.075)); /* Adjust the gradient color and opacity */
+}
+
 /* @media (min-width: 0em) and (max-width: 49em){
   h1 {
     font-size: 2.5rem;
