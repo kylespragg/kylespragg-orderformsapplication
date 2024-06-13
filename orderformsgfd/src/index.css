@@ -1,0 +1,729 @@
+body { /*background of page */
+  margin: 0; /* Remove default margin */
+  background-color: #fff;
+}
+
+.mainHeader { /*main header for GFD order forms*/
+    position: relative;
+    color: #bdbec0;
+    text-align: center;
+    font-size: 3.5rem;
+    background-color: #9a173a;
+    padding-top: 5vh;
+    margin: 0;
+    z-index: 1;
+}
+
+
+.mainHeadersText { 
+  color: grey;
+  text-align: center;
+  border-bottom: black;
+  margin-top: 4vh;
+  padding-bottom: 2vh;
+  font-size: 3rem;
+  font-family: serif;
+}
+
+h3{ /*header for list of items SendOrderPage*/
+
+  position: relative;
+  text-align: left;
+  color: black;
+  margin-left: 3vw;
+}
+
+.tabs{ /*tab buttons */
+
+  position: absolute;
+  color: #9a173a;
+  top: 3.5vw;
+  right: 8vw;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+
+}
+.tabs button{ /*meant for the send/check order and order history */
+  color: #bdbec0;
+  background-color: #9a173a;
+  border-color: #555555;
+  border-style: outset;
+  margin-bottom: 1.5rem;
+  z-index: 1;
+  font-size: 1.1rem;
+  width: 9rem;
+}
+.tabs button:hover{
+
+  background-color:#510c1f;
+  border-width: 3px;
+  font-size: 1.1rem;
+  width: 9.5rem;
+}
+
+.containermainlogo { /* contains the logo*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+  
+.mainlogo { /*main logo in top left corner */
+    padding-top: 3vh;
+    padding-left: 3vw;
+    z-index: 2;
+    height: 20vh;
+}
+
+.custom-main-border { /* border around the main gfd header*/
+  position: relative;
+  border-style: outset;
+  border: .5vh solid maroon;
+  width: 100vw;
+  padding-bottom: 5vh;
+  background-color: #9a173a;
+  z-index: 0;
+}
+
+.custom-list-border{ /* for the list of items SendOrderPage*/
+  color: maroon;
+  border-style: groove;
+  border-width: .5rem;
+  border-color: #9a173a;
+  background-color: lightgrey;
+  width: 45%;
+  height: calc(100% - 10vh);
+  overflow-y: auto;
+  margin-top: 5vh;
+  margin-left: 3vh;
+  margin-right: 3vh;
+
+}
+* {
+  box-sizing: border-box;
+}
+
+.list-container {/*displays general and hygiene boxes correctly SendOrderPage*/
+  display: flex; /*displays the two boxes next to each other left and right */
+  justify-content: space-between; /*helps to make sure there is space between */
+  height: 100vh;
+}
+
+.items-container { /*container for all items in the list SendOrderPage*/
+  display: flex;
+  justify-content: space-between;
+  margin-left: 4vw;
+  margin-right: 4vw;
+  align-items: center;
+  border-bottom: 1px solid #555; /* Add a border line under each h3 element SendOrderPage*/
+  height: 3rem;
+}
+
+.addItemsContainer{ /*container for the add item, name, and quantity functionality SendOrderPage*/
+  display: flex;
+  justify-content: space-between;
+  margin-left: 4vw;
+  margin-right: 4vw;
+}
+.removeButton{ /*remove item button SendOrderPage */
+
+  color: #fff;
+  background-color:#555555;
+  cursor: pointer;
+  border-radius: .8rem;
+  height: 2rem;
+}
+.addItem{ /*input for the orderforms */
+  background-color: #eee;
+  border-color: black;
+  border-style: groove;
+  height: 1.5rem;
+  width: 8rem;
+
+}
+.addItemButton {  /* add item button color SendOrderPage*/
+
+  background-color: #525252;
+  border-color: solid rgb(68, 0, 0);
+  color: #fff;
+  text-align: center;
+  display: inline-block;
+  font-size: .8rem;
+  border-radius: 1rem; /* Optional: rounded corners */
+}
+.addItemButton:hover{ /*SendOrderPage */
+  background-color:#0c0c0c;
+}
+.submitOrderButton{ /*submit order button SendOrderPage */
+
+  background-color:#525252;
+  border-color: solid rgb(68, 0, 0);
+  color: #fff;
+  display: inline-block;
+  font-size: .8rem;
+  border-radius: 1rem;
+  margin-left: 2vw;
+  position: relative;
+  
+}
+.submitOrderButton:hover{ /*SendOrderPage */
+  background-color:#0c0c0c;
+}
+/* Success message below submit order button SendOrderPage */
+.successMessage { 
+  font-size: 1rem;
+  position: absolute;
+
+}
+.animation .successMessage { /*animation of success message */
+
+  transform: translate(-50%, 50%);
+  margin-left: 4vw;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #4d4d4d 0, white 10%,#4d4d4d 20%);
+  background-position: 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: move 4s infinite linear;
+  animation-fill-mode: forwards;
+}
+@keyframes move {
+
+  0%{
+    background-position: 0;
+  }
+  50%{
+    background-position: 180px;
+  }
+  100%{
+    background-position: 400px;
+  }
+}
+.containerSubmitandSuccess{ /*Success message container SendOrderPage */
+  position: relative;
+  display: flex;
+  margin-bottom: 1vh;
+  right: 2vw;
+  margin-left: 6vw;
+  display: flex;
+  flex-direction: column;
+}
+/*Check order page */
+
+#containerCheckHeader { /* main container */
+  position: relative;
+  top: 2vh;
+  height: 4rem;
+  border-bottom: .35rem solid #9a173a;
+}
+#checkHeaderTitle{/* check order main text */
+  color: #4d4b4b;
+  text-align: center;
+  margin-top: 4vh;
+  margin-bottom: 1vh;
+  font-size: 3.5rem;
+  font-family: serif;
+}
+#checkOrderBorder{ /*border for where order will be displayed */
+  height: 100vh;
+  margin-left: 15vw;
+  margin-right: 15vw;
+  margin-top: 8vh;
+  border: .75rem;
+  border-style: groove;
+  border-color: #510c1f;
+  background-color: lightgrey;
+  border-radius: 1rem;
+  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.7);
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-bottom: 5vh;
+
+}
+#topnav { /*navigation for the checkorder page (search button)*/
+  position: absolute;
+  left: 50vw;
+  top: 0vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown{ /*dropdown box */
+  background-color: #fff;
+  display: flex;
+  width: 9vw;
+  flex-direction: column;
+  border: 2px solid gray;
+  margin-left: 4.4vw;
+  margin-top: .5vh;
+  z-index: 5;
+}
+
+.dropdown:empty { /*if dropdown rows are empty */
+  border: none;
+}
+
+.dropdown-row{ /* text for each row */
+  cursor: pointer;
+  text-align: center;
+  margin: 2px 0;
+  border-bottom: 2px black;
+  z-index: 5;
+}
+
+.dropdown-row:hover{ /*changes color of row date when hovering */
+  color: #9a173a;
+  background-color: #ccc
+}
+
+.checkOrderSearch{ /*dates in dropdown rows*/
+  border: solid;
+  margin-left: 5vw;
+  margin-right: 15vw; 
+  background-color:#525252;
+  border-color: rgb(68, 0, 0);
+  color: #fff;
+  border-radius: .25rem;
+  width: 7rem;
+  font-size: 1rem;
+  font-family: serif;
+}
+.checkOrderSearch:hover{ /*changes the search button when u hover over */
+  background-color:#0c0c0c;
+}
+
+
+#dateHeaderContainer {
+  margin-top: 0vh;
+  margin-left: 8vw;
+  display: inline-block;
+  font-size: 3rem;
+  font-family: serif;
+  color: rgb(85, 85, 85);
+  border-bottom: none; /* Hide border initially */
+}
+
+#dateHeaderContainer:not(:empty) {
+  border-bottom: 1px solid grey; /* Display border when there is text inside */
+}
+
+.checkItemText { /*items text in table */
+  font-size: .8rem;
+  color: black;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  text-align: center;
+}
+#checkItemsContainer{ /*table container for items */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -2.5vh;
+  padding-left: 2vh;
+  padding-right: 2vh;
+  width: 80%;
+  padding-bottom: 5vh;
+}
+#checkItemsContainer td, #checkItemsContainer th{ /*lines in rows and columns */
+  border: solid black .5px;
+  overflow: hidden;
+}
+#editQuantityText { /*text specific for quantity --> edit the location */
+    font-size: .8rem;
+    color: black;
+    margin-left: 1vw;
+    margin-right: 2vw;
+    text-align: center;
+}
+#quantityButtonUnselected{ /* container for quantity button elements when not being edited */
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+}
+#quantityButtonOff{ /* button to switch between edit field */
+  width: .5rem;
+  height: .75rem;
+  border: solid #510c1f 2px;
+  position: relative;
+  top: 1.75vh;
+  border-radius: .5rem;
+  z-index: 0;
+}
+#quantityButtonOff:hover{  /*changes background/size of quantity button */
+  background-color: #4d4d4d;
+  width: .5rem;
+  height: .85rem;
+}
+
+#quantityButtonSelected { /*container when input field is visible */
+  display: flex;
+  align-items: center;
+  width: 6.5vw;
+}
+#quantityButtonOn{ /* button to switch between edit field */
+  width: .5rem;
+  height: .75rem;
+  border: solid #510c1f 2px;
+  border-radius: .5rem;
+  position: relative;
+  left: 6vw;
+}
+
+#quantityButtonOn:hover{ /*changes size and background of quantity button */
+  background-color: #4d4d4d;
+  width: .5rem;
+  height: .85rem;
+}
+#quantityTextField { /*styling of input field for quantity */
+  width: 2rem;
+  height: 1rem;
+  left: 3vw;
+  font-size: .8rem;
+  position: relative;
+}
+#quantityTextField::-webkit-inner-spin-button,
+#quantityTextField::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#saveEditQuantity{ /*save button when editing quantity */
+  position: relative;
+  top: 2.25vh;
+  left: .5vw;
+  height: .75rem;
+  width: 2.5rem;
+  font-size: .5rem;
+  border: solid #510c1f 1px;
+  border-radius: .25rem;
+  background-color: #eee;
+  color: black;
+}
+
+#saveEditQuantity:hover{ /*changes color of save button when hovering over */
+  background-color: #bbb ;
+}
+
+#quantitySuccessMessage { /*sucess message when edit is sucessful */
+  font-size: .65rem;
+  position: relative;
+  left: 3.25vw;
+  top: 2vh;
+  width: 5vw;
+}
+
+#animationQuantity #quantitySuccessMessage { /*animation of success message */
+  transform: translate(-50%, 50%);
+  color: #fff;
+  font-weight: bold;
+  background: linear-gradient(to right, #4d4d4d 0, white 10%,#4d4d4d 20%);
+  background-position: 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: move 4s infinite linear;
+  animation-fill-mode: forwards;
+}
+
+#editStatusText { /*text specific for status --> edit the location */
+  font-size: .8rem;
+  color: black;
+  margin-left: 3.5vw;
+  margin-right: 3vw;
+  margin-top: 3vh;
+  text-align: center;
+}
+#statusButtonUnselected{ /*container for elements when status button is unselected */
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  height: 4rem;
+  width: 5.5rem;
+}
+
+#statusButtonOff{ /* button to switch between edit field */
+  width: .5rem;
+  height: .75rem;
+  border: solid #510c1f 2px;
+  position: relative;
+  border-radius: 1rem;
+  top: 3.25vh;
+}
+
+#statusButtonOff:hover{ /* hover feature for button to switch between edit field  */
+    background-color: #4d4d4d;
+    width: .5rem;
+    height: .85rem;
+}
+
+#statusButtonSelected { /*container for when status button is selected */
+  display: flex;
+  align-items: center;
+  width: 5.5rem;
+  height: 4rem;
+}
+
+#statusButtonOn{ /*button to switch between edit field  */
+    width: .5rem;
+    height: .75rem;
+    border: solid #510c1f 2px;
+    border-radius: 1rem;
+    position: relative;
+    left: 1.5vw;
+}
+
+#statusButtonOn:hover{ /*adjusts background color and size of button to switch between edit field */
+    background-color: #4d4d4d;
+    width: .5rem;
+    height: .85rem;
+}
+
+#statusSelect{ /*styling for drop down selection */
+  width: 4rem;
+  height: 1rem;
+  font-size: .75rem;
+  margin-left: 1.5vw;
+  background-color: #fff;
+  color: black;
+  border: #71102c solid 1.5px;
+  border-radius: .25rem;
+  text-align: center;
+  position: relative;
+}
+
+
+#saveEditStatus{ /* save button when editing status */
+  position: relative;
+  top: 2.5vh;
+  height: .8rem;
+  width: 2.5rem;
+  font-size: .6rem;
+  border: solid #510c1f 1px;
+  border-radius: .25rem;
+  background-color: #eee;
+  color: black;
+}
+
+
+#saveEditStatus:hover{ /*edits background of save button on status */
+  background-color: #bbb;
+}
+#statusSuccessMessage { /* status success message styling*/
+  font-size: .65rem;
+  position: relative;
+  right: 4vw;
+  top: 2vh;
+  width: 7rem;
+}
+
+#animationStatus #statusSuccessMessage { /*animation of status message */
+  color: #fff;
+  font-weight: bold;
+  transform: translate(-50%, 50%);
+  background: linear-gradient(to right, #4d4d4d 0, white 10%,#4d4d4d 20%);
+  background-position: 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: move 4s infinite linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes move { /*all success messages animation*/
+
+  0%{
+    background-position: 0;
+  }
+  50%{
+    background-position: 180px;
+  }
+  100%{
+    background-position: 400px;
+  }
+}
+
+
+
+/* Order History Page */
+#orderHistoryContainer{
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+#orderHistoryText {
+  color: #4d4b4b;
+  text-align: center;
+  margin-top: 4vh;
+  font-size: 4rem;
+  font-family: serif;
+  margin-bottom: -4vh;
+}
+#pendingOrdersText {
+  font-size: 3rem;
+  margin-left: 8vw;
+  color: #000;
+  font-family: serif;
+}
+
+#orderHistoryTable{
+  margin-left: 4vw;
+  margin-right: 4vw;
+}
+
+.headHistoryText{
+  font-size: 2rem;
+  padding-left: 5vw;
+}
+.deleteHeadText{
+  padding-left: 40vw;
+  font-size: 2rem;
+}
+.divider-shadow {
+  position: relative;
+  border-radius: 20px; /* Adjust border radius as needed */
+}
+
+.divider-shadow::after {
+  margin-top: -3vh;
+  content: "";
+  position: absolute;
+  top: 100%; /* Push the shadow below the element */
+  left: -4vw;
+  width: 100vw;
+  height: 3vh; /* Adjust the height of the shadow as needed */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.075)); /* Adjust the gradient color and opacity */
+}
+
+/* @media (min-width: 0em) and (max-width: 49em){
+  h1 {
+    font-size: 2.5rem;
+
+  }
+  .mainlogo {
+    padding-left: 5%;
+  }
+
+  .tabs {
+
+    right: 5vw;
+    font-size: 1.5rem;
+
+  }
+  .tabs button {
+
+    font-size: .6rem;
+    width: 7rem;
+  
+  }
+  .addItem{
+
+    width: 4rem;
+
+  }
+  .addItemButton {
+
+    font-size: .6rem;
+    border-radius: .8rem;
+  }
+  .addItemsContainer {
+
+    margin-left: 2vw;
+    margin-right: 2vw;
+  }
+
+} */
+/* @media (min-height: 0em) and (max-height: 49em){
+  .mainlogo{
+    padding-top: 5vh;
+    max-height: 80%;
+  }
+  h1 {
+    font-size: 2.5rem;
+    padding-bottom: 5vh;
+
+  }
+  .custom-main-border {
+    padding-bottom: 5vh;
+  }
+
+  .tabs{
+    font-size: 1.5rem;
+    top: 6vh;
+
+  }
+  .tabs button {
+    margin-bottom: 1rem;
+    font-size: .8rem;
+  }
+  .addItem{
+
+    height: 1rem;
+
+  }
+  .addItemButton {
+
+    font-size: .6rem;
+    border-radius: .8rem;
+  }
+
+}
+@media (min-width: 50em) and (max-width: 80em){
+  h1 {
+    font-size: 2.5rem;
+
+  }
+  .mainlogo {
+    max-width: 70%;
+  }
+  .tabs{
+    font-size: 1rem;
+    right: 5vw;
+  }
+  .tabs button {
+    font-size: 1rem;
+    width: 7rem;
+  }
+  .addItem{
+    width: 6rem;
+  }
+  .addItemButton {
+    font-size: .6rem;
+    border-radius: .8rem;
+  }
+  .addItemsContainer {
+    margin-left: 2vw;
+    margin-right: 2vw;
+  }
+
+}
+@media (min-height: 50em) and (max-height: 80em) {
+  h1 {
+      font-size: 2.5rem;
+
+  }
+  .mainlogo {
+    padding-top: 3vh;
+    max-height: 14vh;
+  
+  }
+  .custom-main-border {
+    padding-bottom: 5vh;
+  }
+
+  .tabs{
+    font-size: 1.5rem;
+    top: 5vh;
+
+
+  }
+  .tabs button {
+    width: 7rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+} */
