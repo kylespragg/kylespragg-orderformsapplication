@@ -1,0 +1,226 @@
+/*SendOrderPage */
+.mainHeadersText { 
+  color: #4d4b4b;
+  text-align: center;
+  border-bottom: black;
+  margin-top: 4vh;
+  padding-bottom: 2vh;
+  font-size: 3rem;
+  font-family: serif;
+}
+.listItem { /*header for list of items SendOrderPage*/
+  position: relative;
+  text-align: left;
+  color: black;
+  font-family: serif;
+  margin-left: 3vw;
+}
+.custom-list-border{ /* for the list of items SendOrderPage*/
+    color: maroon;
+    font-family: serif;
+    border-style: groove;
+    border-width: .5rem;
+    border-color: #9a173a;
+    background-color: lightgrey;
+    width: 45%;
+    height: calc(100% - 10vh);
+    overflow-y: auto;
+    margin-top: 5vh;
+    margin-left: 3vh;
+    margin-right: 3vh;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  .list-container {/*displays general and hygiene boxes correctly SendOrderPage*/
+    display: flex; /*displays the two boxes next to each other left and right */
+    justify-content: space-between; /*helps to make sure there is space between */
+    height: 100vh;
+  }
+  .items-container { /*container for all items in the list SendOrderPage*/
+    display: flex;
+    justify-content: space-between;
+    margin-left: 4vw;
+    margin-right: 4vw;
+    align-items: center;
+    border-bottom: 1px solid #555; /* Add a border line under each h3 element SendOrderPage*/
+    height: 3rem;
+  }
+  .addItemsContainer{ /*container for the add item, name, and quantity functionality SendOrderPage*/
+    display: flex;
+    justify-content: space-between;
+    margin-left: 4vw;
+    margin-right: 4vw;
+  }
+  .removeButton{ /*remove item button SendOrderPage */
+    color: #fff;
+    font-family: serif;
+    background-color:#555555;
+    cursor: pointer;
+    border-radius: .8rem;
+    height: 2rem;
+  }
+  .addItem{ /*input for the orderforms */
+    background-color: #eee;
+    border-color: black;
+    border-style: groove;
+    height: 1.5rem;
+    width: 8rem;
+  }
+  .addItemButton {  /* add item button color SendOrderPage*/
+    background-color: #525252;
+    border-color: solid rgb(68, 0, 0);
+    color: #fff;
+    font-family: serif;
+    text-align: center;
+    display: inline-block;
+    font-size: .8rem;
+    border-radius: 1rem; /* Optional: rounded corners */
+  }
+  .addItemButton:hover{ /*SendOrderPage */
+    background-color:#0c0c0c;
+  }
+  .submitOrderButton{ /*submit order button SendOrderPage */
+    background-color:#525252;
+    border-color: solid rgb(68, 0, 0);
+    color: #fff;
+    font-family: serif;
+    display: inline-block;
+    font-size: .8rem;
+    border-radius: 1rem;
+    margin-left: 2vw;
+    position: relative;  
+  }
+  .submitOrderButton:hover{ /*SendOrderPage */
+    background-color:#0c0c0c;
+  }
+  .successMessage { /* Success message below submit order button SendOrderPage */
+    font-size: 1rem;
+    font-family: serif;
+    position: absolute;
+  }
+  .animation .successMessage { /*animation of success message */
+    transform: translate(-50%, 50%);
+    margin-left: 4vw;
+    color: #fff;
+    font-family: serif;
+    font-weight: bold;
+    background: linear-gradient(to right, #4d4d4d 0, white 10%,#4d4d4d 20%);
+    background-position: 0;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: move 4s infinite linear;
+    animation-fill-mode: forwards;
+  }
+  @keyframes move {
+    0%{
+      background-position: 0;
+    }
+    50%{
+      background-position: 180px;
+    }
+    100%{
+      background-position: 400px;
+    }
+  }
+  .containerSubmitandSuccess{ /*Success message container SendOrderPage */
+    position: relative;
+    display: flex;
+    margin-bottom: 1vh;
+    right: 2vw;
+    margin-left: 6vw;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  @media (max-width: 75em) and (min-width: 38em) {
+    .list-container {
+      height: 80vh;
+    }
+    .addItem {
+      width: 8vw;
+      height: 3vh;
+      font-size: .75rem;
+    }
+    .addItemButton {
+      width: 12.5vw;
+      height: 3vh;
+      font-size: .6rem;
+
+    }
+    .removeButton {
+      font-size: .65rem;
+      height: 3.5vh;
+    }
+    .submitOrderButton {
+      font-size: .65rem;
+    }
+    .listItem { 
+      font-size: .75rem;
+    }
+    .successMessage {
+      left: 6vw;
+      font-size: .8rem;
+    }
+  }
+  
+   @media (max-width: 38em) {
+    .list-container {
+      width: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .addItem {
+      width: 14vw;
+      height: 3vh;
+      font-size: .75rem;
+    }
+    .addItemButton {
+      width: 17vw;
+      height: 3.5vh;
+      font-size: .6rem;
+
+    }
+    .addItemsContainer {
+      justify-content: none;
+    }
+    .removeButton {
+      font-size: .65rem;
+      height: 3vh;
+    }
+    .submitOrderButton {
+      font-size: .65rem;
+    }
+    .listItem { 
+      font-size: .75rem;
+    }
+  }
+  
+  @media (max-height: 35em) {
+    .addItem {
+      width: 10vw;
+      height: 6vh;
+      font-size: .75rem;
+    }
+    .addItemButton {
+      width: 10vw;
+      height: 8vh;
+      font-size: .6rem;
+
+    }
+    .addItemsContainer {
+      justify-content: none;
+    }
+    .removeButton {
+      font-size: .65rem;
+      height: 3h;
+    }
+    .submitOrderButton {
+      font-size: .65rem;
+    }
+    .listItem { 
+      font-size: .75rem;
+    }
+  
+  }

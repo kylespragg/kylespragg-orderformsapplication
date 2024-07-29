@@ -1,0 +1,156 @@
+/* Order History Page */
+#orderHistoryContainer{
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  #orderHistoryText {
+    color: #4d4b4b;
+    font-family: serif;
+    text-align: center;
+    margin-top: 4vh;
+    font-size: 4rem;
+    font-family: serif;
+    margin-bottom: -4vh;
+  }
+  .ordersText {
+    font-size: 3rem;
+    margin-left: 8vw;
+    color: #4d4b4b;
+    font-family: serif;
+  }
+  .orderHistoryTable{
+    margin-left: 4vw;
+    position: relative;
+  }
+  .headHistoryText{
+    font-size: 2rem;
+    color: #4d4b4b;
+    font-family: serif;
+  }
+  .clearOrderHeadText{
+    padding-left: 22vw;
+    font-size: 2rem;
+    color: #4d4b4b;
+    font-family: serif;
+  }
+  .divider-shadow {
+    position: relative;
+    border-radius: 20px; /* Adjust border radius as needed */
+  }
+  .divider-shadow::after {
+    margin-top: -3vh;
+    content: "";
+    position: absolute;
+    top: 100%; /* Push the shadow below the element */
+    width: 100vw;
+    left: -4vw;
+    height: 3vh; /* Adjust the height of the shadow as needed */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.075)); /* Adjust the gradient color and opacity */
+  }
+  .columnDateText{
+    font-size: 1.5rem;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    color: #4d4b4b;
+    font-family: serif;
+  }
+  .itemStatusText {
+    font-size: 1.5rem;
+    margin-left: 4vw;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    color: #4d4b4b;
+    font-family: serif;
+  }
+  .clearOrderText {
+    font-size: .75rem;
+    margin-left: 42vw;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    width: 6rem;
+    color: #fff;
+    background-color:#555;
+    border: inset #4d4b4b 2px;
+    border-radius: .5rem;
+    font-family: serif;
+  }
+  .clearOrderText:hover{
+    border: outset #4d4b4b 2px;
+    background-color: #a1a1a1;
+  }
+  .modal-overlay { /*background pop up that darkens the screen around */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content { /*window opens for a warning message */
+    background: white;
+    padding: 2em;
+    border-radius: .2em;
+    text-align: center;
+    box-shadow: 0 .5vw 1vh rgba(0, 0, 0, 0.2);
+  }
+  
+  .modal-buttons { /*warning message yes/no container*/
+    display: flex;
+    justify-content: center;
+    margin-top: 2vh;
+  }
+  
+  .modal-button { /*styling for buttons that are yes/no */
+    margin: 0 2vh;
+    padding: 1vw 2vh;
+    border: none;
+    background-color: #5cb85c;
+    color: white;
+    font-family: serif;
+    cursor: pointer;
+    border-radius: .25em;
+  }
+  
+  .modal-button:hover {
+    background-color: #4cae4c;
+    font-family: serif;
+  }
+  
+  .modal-button:nth-child(2) {
+    background-color: #d9534f;
+    font-family: serif;
+    border-radius: .25em;
+  }
+  
+  .modal-button:nth-child(2):hover {
+    font-family: serif;
+    background-color: #c9302c;
+  
+  }
+  .deleteMessageText{
+    font-family: serif;
+    color: #000;
+  }
+  
+  /* @media (max-width: 75em) and (min-width: 36em) {
+    
+  } */
+
+
+   /* @media (max-width: 38em) {
+    
+  } */
+
+
+ 
+  /* @media (max-height: 32em) {
+    
+  }  */

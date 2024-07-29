@@ -4,7 +4,11 @@
 /node_modules
 /.pnp
 .pnp.js
+# Babel cache
+client/node_modules/.cache/babel-loader/
 
+# ESLint cache
+client/node_modules/.cache/eslint-loader/
 # testing
 /coverage
 
